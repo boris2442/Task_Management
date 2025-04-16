@@ -1,0 +1,10 @@
+@import "tailwindcss";
+/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
+
+
+  *, ::after, ::before{
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+  }
+  body{
+    background-color: #B4CA65;
+  }
