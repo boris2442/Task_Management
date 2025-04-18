@@ -6,11 +6,10 @@
 
         if (togglePassword && passwordField) {
             togglePassword.addEventListener("click", function () {
-                console.log('je suis cliauer')
-                console.log(togglePassword, passwordField)
+              
+         
                 const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-                passwordField.setAttribute("type", type);
-                
+                passwordField.setAttribute("type", type);   
             });
         }
     });

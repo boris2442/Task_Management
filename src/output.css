@@ -24,6 +24,8 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
@@ -199,6 +201,18 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .mt-\[10vh\] {
+    margin-top: 10vh;
+  }
+  .mt-\[15vh\] {
+    margin-top: 15vh;
+  }
+  .mt-\[25vh\] {
+    margin-top: 25vh;
+  }
+  .mt-\[45vh\] {
+    margin-top: 45vh;
+  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -332,6 +346,9 @@
   .bg-\[\#B4CA65\] {
     background-color: #B4CA65;
   }
+  .bg-\[\#ff6c6c\] {
+    background-color: #ff6c6c;
+  }
   .bg-green-100 {
     background-color: var(--color-green-100);
   }
@@ -374,11 +391,21 @@
   .pt-\[7px\] {
     padding-top: 7px;
   }
+  .pt-\[20px\] {
+    padding-top: 20px;
+  }
+  .pl-\[20px\] {
+    padding-left: 20px;
+  }
   .text-center {
     text-align: center;
   }
   .text-left {
     text-align: left;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);

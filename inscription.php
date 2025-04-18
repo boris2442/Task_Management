@@ -8,9 +8,10 @@ if ($_POST) {
     //recuperation des erreurs sous forme de tableau
     $errors = [];
     if (
-        empty($_POST['nom'])
-        // || !preg_match("/^[a-zA-Z0-9_]{3,20}$/", $_POST['nom'])
-        || strlen(clean_input($_POST['nom'] > 20))
+        empty($_POST['nom']) 
+        // || !preg_match('/^[a-zA-Z0-9_]{3,20}$/', $_POST['nom'])
+
+
     ) {
         $errors['nom'] = "Le nom  doit contenir entre 3 et 20 caractères alphanumériques";
     } else {
@@ -39,7 +40,7 @@ if ($_POST) {
     ) {
         $errors['password'] = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre";
     }
-
+    var_dump(clean_input($_POST['nom']), clean_input($_POST['email']), clean_input($_POST['password']));
     //INSERT INTO
     if (empty($errors)) {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -63,8 +64,8 @@ if ($_POST) {
 $title = "inscription a la database";
 require_once 'includes/header.php'
 ?>
-
-<form method="POST" action="" class=" p-6 rounded shadow max-w-lg mx-auto" id='form_inscription'>
+<h1 class="text-2xl pl-[20px] pt-[20px]">Bien vouloir vous inscrire</h1>
+<form method="POST" action="" class=" p-6 rounded shadow max-w-lg mx-auto mt-[10vh]" id='form_inscription'>
     <div class="flex flex-col gap-[7px] pt-[7px] justify-center ">
         <?php
         if (!empty($errors)) {
@@ -104,7 +105,7 @@ require_once 'includes/header.php'
 
         <div class="text-left flex flex-col gap-[7px]">
 
-            <input type="submit" name="forminscription" value="S'inscrire" class="w-full border  p-2 rounded focus:outline-none focus:border-green-500 bg-red-500 hover:bg-red-400" />
+            <input type="submit" name="forminscription" value="S'inscrire" class="w-full border  p-2 rounded focus:outline-none focus:border-green-500 bg-[#ff6c6c] hover:bg-red-400" />
         </div>
 
         <!-- <div class="w-full text-left flex gap-[7px] justify-between">
