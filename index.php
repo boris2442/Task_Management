@@ -9,7 +9,7 @@ require_once "includes/header.php"
         <!-- Texte -->
         <div class="flex-1 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                Bienvenue sur notre <span class="text-[#9A5151]">gestionnaire de tâches</span>
+            TASKMANAGER: <span class="text-[#9A5151]">gestionnaire de tâches</span>
             </h1>
             <p class="text-lg md:text-xl text-white mb-6">
                 Organisez, suivez et gérez toutes vos tâches en toute simplicité.

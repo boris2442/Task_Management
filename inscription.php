@@ -8,7 +8,7 @@ if ($_POST) {
     //recuperation des erreurs sous forme de tableau
     $errors = [];
     if (
-        empty($_POST['nom']) 
+        empty($_POST['nom'])
         // || !preg_match('/^[a-zA-Z0-9_]{3,20}$/', $_POST['nom'])
 
 
@@ -75,12 +75,12 @@ require_once 'includes/header.php'
 
         <div class="text-left flex flex-col gap-[7px]">
             <label for="nom">Pseudo :</label>
-            <input type="text" placeholder="Votre nom" id="nom" name="nom" value="<?= clean_input($_POST['nom'] ?? '')  ?>" required class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
+            <input type="text" placeholder="Votre pseudo" id="nom" name="nom" value="<?= clean_input($_POST['nom'] ?? '')  ?>" required class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
         </div>
 
         <div class="text-left flex flex-col gap-[7px]">
             <label for="mail">Email :</label>
-            <input type="email" required placeholder="Votre mail" id="mail" value="<?= clean_input($_POST['email'] ?? '')  ?>" name="email" class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
+            <input type="email" required placeholder="Votre email" id="mail" value="<?= clean_input($_POST['email'] ?? '')  ?>" name="email" class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
         </div>
 
         <div class="text-left flex flex-col gap-[7px]">

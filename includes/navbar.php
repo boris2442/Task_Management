@@ -14,7 +14,7 @@
       <!-- Pour USER -->
       <a href="#" class="hover:underline">Profil</a>
       <a href="#" class="hover:underline">Tâches</a>
-      <a href="#" class="hover:underline">Déconnexion</a>
+      <a href="#" class="hover:underline">Connexion</a>
 
       <!-- Pour ADMIN (même liens + autres si besoin) -->
       <!-- <a href="#" class="hover:underline">Utilisateurs</a> -->
