@@ -64,6 +64,7 @@ if ($_POST) {
 $title = "inscription a la database";
 require_once 'includes/header.php'
 ?>
+<section>
 <h1 class="text-2xl pl-[20px] pt-[20px]">Bien vouloir vous inscrire</h1>
 <form method="POST" action="" class=" p-6 rounded shadow max-w-lg mx-auto mt-[10vh]" id='form_inscription'>
     <div class="flex flex-col gap-[7px] pt-[7px] justify-center ">
@@ -113,7 +114,7 @@ require_once 'includes/header.php'
         </div> -->
     </div>
 </form>
-
+</section>
 
 <?php
 require_once 'includes/footer.php'
