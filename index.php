@@ -14,8 +14,9 @@ require_once "includes/header.php"
             <p class="text-lg md:text-xl text-white mb-6">
                 Organisez, suivez et gérez toutes vos tâches en toute simplicité.
             </p>
-            <button class="bg-[#9A5151] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
-                Commencer
+            <button class="bg-[#9A5151] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#B4CA66] transition duration-300">
+                <a href="inscription.php">       Commencer</a>
+         
             </button>
         </div>
 

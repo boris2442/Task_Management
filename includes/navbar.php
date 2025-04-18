@@ -4,8 +4,8 @@
     
     <!-- Logo -->
     <div class="flex items-center space-x-2">
-      <img src="logo.png" alt="Logo" class="h-10 w-10 object-cover">
-      <span class="text-xl font-bold text-white">TaskManager</span>
+      <!-- <img src="../assets/logo/logo.webp" alt="Logo" class="h-10 w-10 object-cover"> -->
+      <span class="text-xl font-bold text-white uppercase"  style="font-family: cursive; ">TASKMANAGER</span>
     </div>
 
     <!-- Desktop Nav -->
@@ -21,9 +21,9 @@
 
       <!-- Pour VISITEUR -->
       <!--
-      <a href="#" class="hover:underline">Connexion</a>
+      <a href="#" class="hover:underline">Connexion</a>   -->
       <a href="#" class="hover:underline">Inscription</a>
-      -->
+   
     </nav>
 
     <!-- Mobile menu button -->
