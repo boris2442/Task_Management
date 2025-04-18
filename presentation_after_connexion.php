@@ -1,13 +1,37 @@
 <?php
 session_start();
+require_once './includes/database/database.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $type_tache = $_POST['type_tache'] ?? '';
+
+    switch ($type_tache) {
+        case 'simple':
+            header('Location: formulaire_simple.php');
+            exit;
+        case 'complexe':
+            header('Location: formulaire_complexe.php');
+            exit;
+        case 'recurrente':
+            header('Location: formulaire_recurrente.php');
+            exit;
+        default:
+            // Redirection vers le formulaire de sélection avec un message d'erreur
+            header('Location: selection_tache.php?erreur=type_invalide');
+            exit;
+    }
+}
 ?>
+
+
+
+
 <?php
-$title = "inscription a la database";
+$title = "welcome-page";
 require_once 'includes/header.php'
 ?>
 <section class="bg-[#B4CA65] text-white py-10 px-6 rounded-lg shadow-md">
     <h1 class="text-2xl pl-[20px] pt-[20px]">Bienvenue <?= $_SESSION['users']['pseudo']  ?></h1>
-    <h2 class="text-3xl font-bold mb-6 text-center">Présentation des types de tâches</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center underline">Présentation des types de tâches</h2>
     <p class="mb-8 text-lg text-center">
         Pour une meilleure organisation, vos tâches sont classées en trois catégories distinctes :
     </p>
@@ -45,7 +69,7 @@ require_once 'includes/header.php'
     </div>
 </section>
 <section>
-    <form action="traitement_tache.php" method="POST" class="bg-[#B4CA65] text-white p-8 rounded-lg shadow-md max-w-md mx-auto mt-[20px]">
+    <form  method="POST" class="bg-[#B4CA65] text-white p-8 rounded-lg shadow-md max-w-md mx-auto mt-[20px]">
         <h2 class="text-2xl font-bold mb-6 text-center">Sélectionnez le type de tâche</h2>
 
         <label for="type_tache" class="block mb-2 text-lg font-semibold">Type de tâche :</label>
