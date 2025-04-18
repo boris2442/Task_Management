@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         default:
             // Redirection vers le formulaire de sélection avec un message d'erreur
-            header('Location: selection_tache.php?erreur=type_invalide');
+            header('Location: presentation_after_connexion.php?erreur=type_invalide');
             exit;
     }
 }
