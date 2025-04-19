@@ -75,7 +75,7 @@ $title = 'connexion a la database';
 require_once 'includes/header.php'
 ?>
 <section>
-<h1 class="text-2xl ">bien vouloir vous connectez</h1>
+<h2 class="text-2xl ">Bien vouloir vous connectez</h2>
 <!-- <form method="POST" class=" bg-white p-6 rounded shadow max-w-lg mx-auto">
     <div class="flex flex-col gap-[7px] pt-[7px]">
         <?php
