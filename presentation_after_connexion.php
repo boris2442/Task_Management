@@ -31,7 +31,7 @@ require_once 'includes/header.php'
 ?>
 <section class="bg-[#B4CA65] text-white py-10 px-6 rounded-lg shadow-md">
     <h1 class="text-2xl pl-[20px] pt-[20px]">Bienvenue <?= $_SESSION['users']['pseudo']  ?></h1>
-    <h2 class="text-3xl font-bold mb-6 text-center underline">Présentation des types de tâches</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center underline text-[#ff6c6c]">Présentation des types de tâches</h2>
     <p class="mb-8 text-lg text-center">
         Pour une meilleure organisation, vos tâches sont classées en trois catégories distinctes :
     </p>

@@ -3,12 +3,13 @@
 
 // Connexion à la base de données
 require_once __DIR__ . '/includes/database/database.php';
+require "/includes/functions/clean_input.php";
 
 // Vérification de la soumission du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération et nettoyage des données
-    $titre = trim($_POST['titre'] ?? '');
-    $description = trim($_POST['description'] ?? '');
+    $titre = clean_input($_POST['titre'] ?? '');
+    $description = clean_input($_POST['description'] ?? '');
     $echeance = $_POST['echeance'] ?? '';
 
     // Validation des données
