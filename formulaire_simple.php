@@ -38,16 +38,16 @@ if (isset($_SESSION['users']['id'])) {
         'sujet' => $sujet,
         'message' => $message
       ]);
-      $id=$db->lastInsertId();
-      $email=$_SESSION['users']['email'];
-      $subjet=$_POST['sujet'];
+      $id = $db->lastInsertId();
+      $email = $_SESSION['users']['email'];
+      $subject = $_POST['sujet'];
       // $message_content=$_POST['message'];
-      $message_content="
+      $message_content = "
        <html>
         <head>
             <style>
                 body {
-                    font-family: 'Poppins', Arial, sans-serif;
+                    font-family: 'monospace', Arial, sans-serif;
                     background-color: #B4CA65;
                     color: #fff;
                 }
@@ -60,13 +60,24 @@ if (isset($_SESSION['users']['id'])) {
             </style>
         </head>
         <body>
+       <p>Bonjour</p>
         <p>$message</p>
+        <p>Nous vous répondrons dans les plus brefs délais.</p>
+        <p>Merci pour votre confiance 🙏</p>
         </body>
         </html>
       ";
+      $message_content = wordwrap($message_content, 70, "\r\n");
       $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        mail($email,$subjet, $message_content,$headers );
+      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+      $headers .= "From:taskmanager@gmail.com";
+      $headers .= "Reply-To:aubinborissimotsebo@gmail.com" . "\r\n";
+      if (mail($email, $subject, $message_content, $headers)) {
+        echo  "✅ Message envoyé avec succès ! Vérifie ta boîte mail.";
+      } else {
+        echo "❌ Une erreur est survenue lors de l’envoi du message.";
+      }
+
       // Redirection ou message de succès
       header('Location: liste_taches.php');
       exit();
