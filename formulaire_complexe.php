@@ -12,34 +12,34 @@ require_once 'includes/header.php'
             <div>
                 <label class="block text-[#333] mb-1 font-semibold">Titre de la tâche</label>
                 <input type="text" name="titre" placeholder="Ex: Organiser une conférence"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
             </div>
 
             <!-- Description -->
             <div>
                 <label class="block text-[#333] mb-1 font-semibold">Description</label>
                 <textarea name="description" rows="4" placeholder="Détaille les étapes..."
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"></textarea>
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700"></textarea>
             </div>
 
             <!-- Date d'échéance -->
             <div>
                 <label class="block text-[#333] mb-1 font-semibold">Date limite</label>
                 <input type="date" name="deadline"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
             </div>
 
             <!-- Étapes de la tâche -->
             <div>
                 <label class="block text-[#333] mb-1 font-semibold">Étapes (séparées par des virgules)</label>
                 <input type="text" name="etapes" placeholder="Planifier, Réserver salle, Envoyer invitations"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
             </div>
 
             <!-- Bouton -->
             <div class="text-center">
                 <button type="submit"
-                    class="bg-red-400 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-500 transition duration-200">
+                    class="w-full bg-[#ff6c6c] hover:bg-red-400 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                     Enregistrer la tâche
                 </button>
             </div>
