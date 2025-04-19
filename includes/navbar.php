@@ -12,9 +12,9 @@
     <nav class="hidden md:flex space-x-6 items-center text-white font-medium">
       <!-- Remplace dynamiquement le contenu de cette section selon le rôle -->
       <!-- Pour USER -->
-      <a href="#" class="hover:underline">Profil</a>
-      <a href="#" class="hover:underline">Tâches</a>
-      <a href="#" class="hover:underline">Connexion</a>
+      <a href="#" class="hover:underline hover:text-[#ff6c6c]">Profil</a>
+      <a href="#" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
+      <a href="#" class="hover:underline hover:text-[#ff6c6c]">Connexion</a>
 
       <!-- Pour ADMIN (même liens + autres si besoin) -->
       <!-- <a href="#" class="hover:underline">Utilisateurs</a> -->

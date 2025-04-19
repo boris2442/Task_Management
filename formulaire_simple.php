@@ -38,7 +38,35 @@ if (isset($_SESSION['users']['id'])) {
         'sujet' => $sujet,
         'message' => $message
       ]);
-      var_dump($stmt);
+      $id=$db->lastInsertId();
+      $email=$_SESSION['users']['email'];
+      $subjet=$_POST['sujet'];
+      // $message_content=$_POST['message'];
+      $message_content="
+       <html>
+        <head>
+            <style>
+                body {
+                    font-family: 'Poppins', Arial, sans-serif;
+                    background-color: #B4CA65;
+                    color: #fff;
+                }
+                a {
+                    color: #007BFF;
+                    font-family:monospace;
+                
+                    text-decoration: underline;
+                  }
+            </style>
+        </head>
+        <body>
+        <p>$message</p>
+        </body>
+        </html>
+      ";
+      $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        mail($email,$subjet, $message_content,$headers );
       // Redirection ou message de succès
       header('Location: liste_taches.php');
       exit();
@@ -80,7 +108,7 @@ require_once 'includes/header.php'
     <div class="mb-4">
       <label for="destinataire" class="block text-gray-700 font-semibold mb-2">Adresse Email du Destinataire</label>
       <input type="email" id="destinataire" name="destinataire" required
-        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700" placeholder="destinataire@gmail.com">
     </div>
 
     <div class="mb-4">
