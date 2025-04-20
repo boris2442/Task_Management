@@ -1,30 +1,76 @@
 <?php
+// session_start();
+// require_once './includes/database/database.php';
+// if ($_SESSION['users']['id']) {
+//     $type_tache = $_POST['type_tache'] ?? '';
+//     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+//     }
+
+//     switch ($type_tache) {
+//         case 'simple':
+//             header('Location: formulaire_simple.php');
+//             exit;
+//         case 'complexe':
+//             header('Location: formulaire_complexe.php');
+//             exit;
+//         case 'recurrente':
+//             header('Location: formulaire_recurrente.php');
+//             exit;
+//         default:
+
+
+//             header('Location: index.php');
+//             exit;
+//     }
+// } else {
+//     header('location:connexion.php');
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 session_start();
 require_once './includes/database/database.php';
-if ($_SESSION['users']['id']) {
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $type_tache = $_POST['type_tache'] ?? '';
-    }
-
-    switch ($type_tache) {
-        case 'simple':
-            header('Location: formulaire_simple.php');
-            exit;
-        case 'complexe':
-            header('Location: formulaire_complexe.php');
-            exit;
-        case 'recurrente':
-            header('Location: formulaire_recurrente.php');
-            exit;
-        default:
-            // Redirection vers le formulaire de sélection avec un message d'erreur
-            header('Location: selection_tache.php?erreur=type_invalide');
-            exit;
-    }
-}else{
-    header('location:connexion.php');
+// Vérification de l'utilisateur connecté
+if (!isset($_SESSION['users']['id'])) {
+    header('Location: connexion.php');
+    exit;
 }
+
+// Initialisation de $type_tache
+$type_tache = '';
+
+// Vérification de la méthode POST et récupération de la valeur
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $type_tache = $_POST['type_tache'] ?? '';
+    //Validation de la valeur de $type_tache
+    $types_valides = ['simple', 'complexe', 'recurrente'];
+    if (in_array($type_tache, $types_valides)) {
+        switch ($type_tache) {
+            case 'simple':
+                header('Location: formulaire_simple.php');
+                exit;
+            case 'complexe':
+                header('Location: formulaire_complexe.php');
+                exit;
+            case 'recurrente':
+                header('Location: formulaire_recurrente.php');
+                exit;
+        }
+    }
+}
+
+
 ?>
 
 
@@ -74,7 +120,9 @@ require_once 'includes/header.php'
     </div>
 </section>
 <section>
-    <form method="POST" class="bg-[#B4CA65] text-white p-8 rounded-lg shadow-md max-w-md mx-auto mt-[20px]">
+    <form method="POST"
+      
+        class="bg-[#B4CA65] text-white p-8 rounded-lg shadow-md max-w-md mx-auto mt-[20px]">
         <h2 class="text-2xl font-bold mb-6 text-center">Sélectionnez le type de tâche</h2>
 
         <label for="type_tache" class="block mb-2 text-lg font-semibold">Type de tâche :</label>

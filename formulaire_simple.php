@@ -80,8 +80,8 @@ $id=$_SESSION['users']['id'];
       }
 
       // Redirection ou message de succès
-      header('Location: liste_taches.php');
-      exit();
+      // header('Location: liste_taches.php');
+      // exit();
 
       // } else {
       //   // Affichage des erreurs
