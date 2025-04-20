@@ -114,7 +114,7 @@ require_once 'includes/header.php'
       }
     }
     ?>
-    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Répondre à un Email</h2>
+    <h2 class="text-2xl font-bold text-red-400 mb-6 text-center">Répondre à un Email</h2>
 
     <div class="mb-4">
       <label for="destinataire" class="block text-gray-700 font-semibold mb-2">Adresse Email du Destinataire</label>
