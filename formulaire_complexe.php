@@ -43,11 +43,12 @@ $title = "tache complexe";
 require_once 'includes/header.php'
 ?>
 <section>
+   
 
     <div class="min-h-screen bg-[#B4CA65] flex items-center justify-center p-4">
         <form method="POST" class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl space-y-6">
             <h2 class="text-2xl font-bold text-[#ff6c6c] text-center underline">Ajouter une tâche complexe</h2>
-
+          
             <!-- Nom de la tâche -->
             <div>
                 <label class="block text-[#333] mb-1 font-semibold">sujet de la tâche</label>

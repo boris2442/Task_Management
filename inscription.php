@@ -108,6 +108,10 @@ require_once 'includes/header.php'
 
             <input type="submit" name="forminscription" value="S'inscrire" class="w-full border  p-2 rounded focus:outline-none focus:border-green-500 bg-[#ff6c6c] hover:bg-red-400" />
         </div>
+        <div class="text-left flex flex-col gap-[7px]">
+<p >deja un compte? <a class="text-red-400" href="connexion.php" >(Se connectez)</a></p>
+           
+        </div>
 
         <!-- <div class="w-full text-left flex gap-[7px] justify-between">
             <a href="connexion.php" class="border  p-2 rounded focus:outline-none focus:border-green-500 bg-red-500 hover:bg-red-400">Se connecter</a>
