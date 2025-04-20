@@ -20,7 +20,7 @@ if (isset($_SESSION['users']['id'])) {
         $etapes = clean_input($_POST['etapes']);
         $id=$_SESSION['users']['id'];
         if (empty($errors)) {
-            $sql = $db->prepare("INSERT INTO `taches` (`sujet`, `message`,`date_limite`,`etapes`, `type`,`id_utilisateur`)) VALUES(:sujet, :message, :date_limite, :etapes, 'complexe',id_utilisateur) ");
+            $sql = $db->prepare("INSERT INTO `taches` (`sujet`, `message`,`date_limite`,`etapes`, `type`,`id_utilisateur`) VALUES(:sujet, :message, :date_limite, :etapes, 'complexe',:id_utilisateur) ");
             $sql->execute([
                 "sujet" => $sujet,
                 "message" => $message,

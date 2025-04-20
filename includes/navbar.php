@@ -13,7 +13,7 @@
       <!-- Remplace dynamiquement le contenu de cette section selon le rôle -->
       <!-- Pour USER -->
       <a href="#" class="hover:underline hover:text-[#ff6c6c]">Profil</a>
-      <a href="#" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
+      <a href="taches_list" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
       <a href="#" class="hover:underline hover:text-[#ff6c6c]">Connexion</a>
 
       <!-- Pour ADMIN (même liens + autres si besoin) -->

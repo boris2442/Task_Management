@@ -49,7 +49,7 @@ if (isset($_SESSION['users']['id'])) {
     echo "</pre>";
     $id = $_SESSION['users']['id'];
     if (empty($errors)) {
-      $sql = $db->prepare("INSERT INTO `taches` (`sujet`,`message`, `etapes`, `frequence`, `date_limite`,`type`,`id_utilisateur,)VALUES(:sujet, :description, :etapes, :frequence, :date_limite,'reccurrente', :id_utilisateur )");
+      $sql = $db->prepare("INSERT INTO `taches` (`sujet`,`message`, `etapes`, `frequence`, `date_limite`,`type`,`id_utilisateur`)VALUES(:sujet, :description, :etapes, :frequence, :date_limite,'reccurrente', :id_utilisateur )");
       $sql->execute([
         'sujet' => $sujet,
         "description" => $description,
