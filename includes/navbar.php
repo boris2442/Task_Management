@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<header class="bg-[#B4CA65] shadow-md">
+<header class="bg-[#B4CA65] shadow-md sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
     
     <!-- Logo -->
@@ -10,19 +10,28 @@
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-6 items-center text-white font-medium">
-      <!-- Remplace dynamiquement le contenu de cette section selon le rôle -->
-      <!-- Pour USER -->
-      <a href="#" class="hover:underline hover:text-[#ff6c6c]">Profil</a>
-      <a href="taches_list" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
-      <a href="#" class="hover:underline hover:text-[#ff6c6c]">Connexion</a>
-
-      <!-- Pour ADMIN (même liens + autres si besoin) -->
-      <!-- <a href="#" class="hover:underline">Utilisateurs</a> -->
-
-      <!-- Pour VISITEUR -->
-      <!--
-      <a href="#" class="hover:underline">Connexion</a>   -->
-      <a href="#" class="hover:underline">Inscription</a>
+     
+      <!-- <a href="#" class="hover:underline hover:text-[#ff6c6c]">Profil</a> -->
+       <?php
+       if( isset($_SESSION['user']['id'])) {
+        
+        ?>
+         <!-- <a href="taches_list" class="hover:underline hover:text-[#ff6c6c]">Tâches</a> -->
+         <!-- <a href="presentation_after_connexion.php" class="hover:underline hover:text-[#ff6c6c]">presentation</a> -->
+         <a href="inscription.php" class="hover:underline hover:text-[#ff6c6c]">Inscription</a>
+         <a href="connexion.php" class="hover:underline hover:text-[#ff6c6c]">Connexion</a>
+         <?php
+       }else{
+        ?>
+         <a href="presentation_after_connexion.php" class="hover:underline hover:text-[#ff6c6c]">Presentation</a>
+          <a href="taches_list.php" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
+          <a href="#" class="hover:underline hover:text-[#ff6c6c]">Profil</a>
+          <a href="deconnexion.php" class="hover:underline hover:text-[#ff6c6c]">Déconnexion</a>
+          <?php
+       }
+       ?>
+      
+      <!-- <a href="#" class="hover:underline">Inscription</a> -->
    
     </nav>
 
@@ -40,9 +49,13 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-[#B4CA65] px-4 py-4 space-y-2 text-white font-medium">
     <!-- Mêmes liens que le desktop, à adapter aussi -->
-    <a href="#" class="block hover:underline">Profil</a>
-    <a href="#" class="block hover:underline">Tâches</a>
-    <a href="#" class="block hover:underline">Déconnexion</a>
+    <!-- <a href="#" class="block hover:underline">Profil</a> -->
+    <a href="taches_list.php" class="block hover:underline">Listes-Tâches</a>      
+
+    <a href="presentation_after_connexion.php" class="block hover:underline">Presentation</a>
+    <a href="inscription.php" class="block hover:underline">Inscription</a>
+    <a href="connexion.php" class="block hover:underline">Connexion</a>
+    <a href="deconnexion.php" class="block hover:underline">Déconnexion</a>
   </div>
 </header>
 
