@@ -18,13 +18,15 @@ if (isset($_SESSION['users']['id'])) {
             $errors = "veuillez reduire le nombre d'etapes";
         }
         $etapes = clean_input($_POST['etapes']);
+        $id=$_SESSION['users']['id'];
         if (empty($errors)) {
-            $sql = $db->prepare("INSERT INTO `taches` (`sujet`, `message`,`date_limite`,`etapes`, `type`) VALUES(:sujet, :message, :date_limite, :etapes, 'complexe') ");
+            $sql = $db->prepare("INSERT INTO `taches` (`sujet`, `message`,`date_limite`,`etapes`, `type`,`id_utilisateur`)) VALUES(:sujet, :message, :date_limite, :etapes, 'complexe',id_utilisateur) ");
             $sql->execute([
                 "sujet" => $sujet,
                 "message" => $message,
                 "date_limite" => $date_limite,
-                "etapes" => $etapes
+                "etapes" => $etapes,
+                'id_utilisateur'=>$id
             ]);
         }
     }

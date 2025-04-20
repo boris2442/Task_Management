@@ -26,14 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($message) || strlen($message>255)) {
         $errors[] = "L'échéance est requise et la taille n excede pas 50 caracteres.";
     }
-
+    $id=$_SESSION['users']['id'];
     if (empty($errors)) {
         // Préparation de la requête d'insertion
-        $stmt = $db->prepare("INSERT INTO taches (destinataire, sujet, message, type) VALUES (:destinataire, :sujet, :message, 'simple')");
+        $stmt = $db->prepare("INSERT INTO taches (destinataire, sujet, message, type,id_utilisateur) VALUES (:destinataire, :sujet, :message, 'simple',:id_utilisateur)");
         $stmt->execute([
             'destinataire' => $destinataire,
             'sujet' => $sujet,
-            'message' => $message
+            'message' => $message,
+            'id_utilisateur'=>$id
         ]);
 var_dump(   $stmt);
         // Redirection ou message de succès
