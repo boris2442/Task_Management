@@ -580,6 +580,9 @@
   .text-\[\#333\] {
     color: #333;
   }
+  .text-\[\#121212\] {
+    color: #121212;
+  }
   .text-\[\#B4CA65\] {
     color: #B4CA65;
   }
@@ -588,6 +591,9 @@
   }
   .text-\[\#ff6c6c\] {
     color: #ff6c6c;
+  }
+  .text-\[white\] {
+    color: white;
   }
   .text-gray-500 {
     color: var(--color-gray-500);
