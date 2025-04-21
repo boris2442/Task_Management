@@ -77,8 +77,8 @@
         <option value="formulaire_simple.php">Tâche simple</option>
         <option value="formulaire_complexe.php">Tâche complexe</option>
         <option value="formulaire_reccurrente.php">Tâche récurrente</option>
-      </select> 
-   
+      </select>
+
 
       <a href="deconnexion.php" class="block hover:underline">Déconnexion</a>
     <?php
@@ -93,10 +93,3 @@
   </div>
 </header>
 
-<script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
