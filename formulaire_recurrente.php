@@ -132,7 +132,15 @@ require_once 'includes/header.php'
         <label class="block text-[#333] mb-1 font-semibold">Date de fin (si récurrente)</label>
         <input type="date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
       </div>
-
+      <div>
+        <label class="block text-[#333] mb-1 font-semibold">Statut actuel</label>
+        <select name="statut
+        " class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
+          <option value="">-- Sélectionner le statut a enregistrer--</option>
+          <option value="terniner">Terminer</option>
+          <option value="attente">En attente</option>
+        </select>
+      </div>
       <!-- Bouton -->
       <div class="text-right">
         <button type="submit" class="w-full bg-[#ff6c6c] hover:bg-red-400 text-white font-bold py-2 px-4 rounded-md transition duration-300">Ajouter la tâche</button>
