@@ -86,40 +86,23 @@ require_once 'includes/navbar.php';
         foreach ($taches as $tache):
         ?>
 
-            <!-- <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-8 border-red-400 max-w-3xl mx-auto">
-            <h5 class="text-2xl font-bold text-[#333] mb-4">
-                <?= clean_input($tache['sujet']); ?>
-            </h5>
-
-            <div class="space-y-2 text-[#333]">
-                <p><span class="font-semibold">Destinataire :</span> <?= clean_input($tache['destinataire']); ?></p>
-                <p><span class="font-semibold">Message :</span> <?= clean_input($tache['message']); ?></p>
-                <p><span class="font-semibold">Type :</span> <?= clean_input($tache['type']); ?></p>
-                <p><span class="font-semibold">Fréquence :</span> <?= clean_input($tache['frequence']); ?></p>
-                <p><span class="font-semibold">Date Limite :</span> <?= clean_input($tache['date_limite']); ?></p>
-                <p><span class="font-semibold">Étapes :</span> <?= clean_input($tache['etapes']); ?></p>
-                <p><span class="font-semibold">Créée le :</span> <?= clean_input($tache['create_at']); ?></p>
-            </div>
-
-            <div class="mt-6">
-                <span class="inline-block bg-red-400 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Statut actuel : <?= strtoupper(clean_input($tache['statut'] ?? 'En attente')) ?>
-                </span>
-            </div>
-        </div> -->
+         
             <div class="bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-8 border-r-8 border-red-400 max-w-4xl w-full mx-auto">
                 <h5 class="text-2xl sm:text-3xl font-bold text-[#333] mb-4 break-words">
                     <?= clean_input($tache['sujet']); ?>
                 </h5>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[#333]">
-                    <p><span class="font-semibold">Destinataire :</span> <?= clean_input($tache['destinataire']); ?></p>
+                  
+                    <!-- <p><span class="font-semibold">Destinataire :</span> <?= clean_input($tache['destinataire'] ?? 'Non défini'); ?></p> -->
+                    <p><span class="font-semibold">Destinataire :</span> <?= clean_input(!empty($tache['destinataire']) ? $tache['destinataire'] : 'Non défini'); ?></p>
+
                     <p><span class="font-semibold">Type :</span> <?= clean_input($tache['type']); ?></p>
 
                     <p class="sm:col-span-2"><span class="font-semibold">Message :</span> <?= clean_input($tache['message']); ?></p>
 
-                    <p><span class="font-semibold">Fréquence :</span> <?= clean_input($tache['frequence']); ?></p>
-                    <p><span class="font-semibold">Date Limite :</span> <?= clean_input($tache['date_limite']); ?></p>
+                    <p><span class="font-semibold">Fréquence :</span> <?= clean_input($tache['frequence']  ?? 'NULL'); ?></p>
+                    <p><span class="font-semibold">Date Limite :</span> <?= clean_input($tache['date_limite']?? $tache['create_at']); ?></p>
 
                     <p><span class="font-semibold">Étapes :</span> <?= clean_input($tache['etapes']); ?></p>
                     <p><span class="font-semibold">Créée le :</span> <?= clean_input($tache['create_at']); ?></p>
@@ -127,7 +110,7 @@ require_once 'includes/navbar.php';
 
                 <div class="mt-6">
                     <span class="inline-block bg-red-400 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-sm">
-                        Statut actuel : <?= strtoupper(clean_input($tache['statut'] ?? 'EN ATTENTE')) ?>
+                        Statut actuel : <?= strtoupper(clean_input($tache['statut'] ?? 'Terminer')) ?>
                     </span>
                 </div>
             </div>
