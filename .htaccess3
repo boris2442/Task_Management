@@ -1,6 +1,11 @@
 RewriteEngine on
-ErrorDocument 404 http://localhost/gestion_des_taches/404
+ErrorDocument 404 /404.php
 
+# Vérifie si le fichier ou le dossier existe
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Règles de réécriture
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 
@@ -11,5 +16,4 @@ RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1  [NC,L,R]
-
+RewriteRule ^ /%1 [NC,L,R]
