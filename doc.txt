@@ -1,0 +1,2 @@
+# Définit la priorité pour que index.php soit utilisé avant index.html
+DirectoryIndex index.php index.html: ceci est mit dans les liens pour eviter l'affichage de l'extension 

@@ -23,10 +23,10 @@
       <?php
       } else {
       ?>
-        <a href="presentation_after_connexion.php" class="hover:underline hover:text-[#ff6c6c]">Presentation</a>
-        <a href="taches_list.php" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
+        <a href="presentation_after_connexion" class="hover:underline hover:text-[#ff6c6c]">Presentation</a>
+        <a href="taches_list" class="hover:underline hover:text-[#ff6c6c]">Tâches</a>
         <a href="#" class="hover:underline hover:text-[#ff6c6c]">Profil</a>
-        <a href="deconnexion.php" class="hover:underline hover:text-[#ff6c6c]">Déconnexion</a>
+        <a href="deconnexion" class="hover:underline hover:text-[#ff6c6c]">Déconnexion</a>
         <select id="taskType" class="w-full p-1 rounded-md bg-white text-[#B4CA65] font-medium focus:outline-none focus:ring-2 focus:ring-[#ff6c6c]">
           <option value="">--Sélectionner une tâche--</option>
           <option value="formulaire_simple.php">Tâche simple</option>
@@ -40,6 +40,7 @@
       <?php
       }
       ?>
+      
 
       <!-- <a href="#" class="hover:underline">Inscription</a> -->
 
