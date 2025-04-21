@@ -15,7 +15,8 @@
     <title> <?= $title ?? 'gestion des articles' ?></title>
 </head>
 
-<body  >
+<body class="text-[#fff]">
+
 
 
     <?php
