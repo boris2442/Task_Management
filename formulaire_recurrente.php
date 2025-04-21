@@ -27,12 +27,20 @@ if (isset($_SESSION['users']['id'])) {
     } else {
       $etapes = clean_input($_POST['etapes']);
     }
+    
+    
+        if (!isset($_POST['frequence'])) {
+          $errors = "choisir une frequence";
+        } else {
+          $frequence = $_POST['frequence'];
+        }
+    
+        if (!isset($_POST['statut'])) {
+          $errors = "choisir une statut";
+        } else {
+          $statut = $_POST['statut'];
+        }
 
-    if (!isset($_POST['frequence'])) {
-      $errors = "choisir une frequence";
-    } else {
-      $frequence = $_POST['frequence'];
-    }
     if (empty($_POST['date'])) {
       $errors = 'please insert date';
     } else {
@@ -44,19 +52,21 @@ if (isset($_SESSION['users']['id'])) {
       $description,
       $etapes,
       $frequence,
-      $date_limite
+      $date_limite,
+      $statut
     );
     echo "</pre>";
     $id = $_SESSION['users']['id'];
     if (empty($errors)) {
-      $sql = $db->prepare("INSERT INTO `taches` (`sujet`,`message`, `etapes`, `frequence`, `date_limite`,`type`,`id_utilisateur`)VALUES(:sujet, :description, :etapes, :frequence, :date_limite,'reccurrente', :id_utilisateur )");
+      $sql = $db->prepare("INSERT INTO `taches` (`sujet`,`message`, `etapes`, `frequence`, `date_limite`,`type`,`id_utilisateur`,`statut`)VALUES(:sujet, :description, :etapes, :frequence, :date_limite,'reccurrente', :id_utilisateur,:statut )");
       $sql->execute([
         'sujet' => $sujet,
         "description" => $description,
         "etapes" => $etapes,
         "frequence" => $frequence,
         "date_limite" => $date_limite,
-        'id_utilisateur' => $id
+        'id_utilisateur' => $id,
+        'statut' => $statut
       ]);
     } else {
       echo "une erreur s'est produite";
@@ -134,8 +144,7 @@ require_once 'includes/header.php'
       </div>
       <div>
         <label class="block text-[#333] mb-1 font-semibold">Statut actuel</label>
-        <select name="statut
-        " class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
+        <select name="statut" " class=" w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-2 focus:border-[#B4CA65] focus:text-gray-800 text-gray-700">
           <option value="">-- Sélectionner le statut a enregistrer--</option>
           <option value="terniner">Terminer</option>
           <option value="attente">En attente</option>
