@@ -18,8 +18,8 @@
       ?>
         <!-- <a href="taches_list" class="hover:underline hover:text-[#ff6c6c]">Tâches</a> -->
         <!-- <a href="presentation_after_connexion.php" class="hover:underline hover:text-[#ff6c6c]">presentation</a> -->
-        <a href="inscription.php" class="hover:underline hover:text-[#ff6c6c]">Inscription</a>
-        <a href="connexion.php" class="hover:underline hover:text-[#ff6c6c]">Connexion</a>
+        <a href="inscription" class="hover:underline hover:text-[#ff6c6c]">Inscription</a>
+        <a href="connexion" class="hover:underline hover:text-[#ff6c6c]">Connexion</a>
       <?php
       } else {
       ?>
@@ -65,13 +65,13 @@
     <?php
     if (!isset($_SESSION['users']['id'])) {
     ?>
-      <a href="inscription.php" class="block hover:underline">Inscription</a>
-      <a href="connexion.php" class="block hover:underline">Connexion</a>
+      <a href="inscription" class="block hover:underline">Inscription</a>
+      <a href="connexion" class="block hover:underline">Connexion</a>
     <?php
     } else {
     ?>
-      <a href="presentation_after_connexion.php" class="block hover:underline">Presentation</a>
-      <a href="taches_list.php" class="block hover:underline">Tâches -List</a>
+      <a href="presentation_after_connexion" class="block hover:underline">Presentation</a>
+      <a href="taches_list" class="block hover:underline">Tâches -List</a>
       <a href="#" class="block hover:underline">Profil</a>
       <select id="taskType" class="w-full p-1 rounded-md bg-white text-[#B4CA65] font-medium focus:outline-none focus:ring-2 focus:ring-[#ff6c6c]">
         <option value="">--Sélectionner une tâche--</option>
@@ -81,7 +81,7 @@
       </select>
 
 
-      <a href="deconnexion.php" class="block hover:underline">Déconnexion</a>
+      <a href="deconnexion" class="block hover:underline">Déconnexion</a>
     <?php
     }
     ?>
