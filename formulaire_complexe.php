@@ -2,23 +2,25 @@
 session_start();
 require_once "includes/database/database.php";
 require_once "includes/functions/clean_input.php";
+$errors = [];
 if (isset($_SESSION['users']['id'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $errors = [];
         if (empty($_POST['sujet']) || strlen($_POST['sujet']) > 60) {
-            $errors = "sujet inexistant et ou n'excede pas 60 caracteres";
+            $errors[] = "sujet inexistant et ou n'excede pas 60 caracteres";
         }
         $sujet = clean_input($_POST['sujet']);
         if (empty($_POST['message']) || strlen($_POST['message']) > 255) {
-            $errors = "La message ne doit pas exceder 250 caracteres";
+            $errors[] = "La message ne doit pas exceder 250 caracteres";
         }
         $message = clean_input($_POST['message']);
         $date_limite = clean_input($_POST['deadline']);
-        if (strlen($_POST['etapes']) > 255 || empty($_POST['etapes'])) {
-            $errors = "veuillez reduire le nombre d'etapes";
+        $today = date('Y-m-d');
+        if ($date_limite < $today) {
+            $errors[] = "La date limite doit etre superieure a la date d'aujourd'hui";
         }
+
         $etapes = clean_input($_POST['etapes']);
-        $id=$_SESSION['users']['id'];
+        $id = $_SESSION['users']['id'];
         if (empty($errors)) {
             $sql = $db->prepare("INSERT INTO `taches` (`sujet`, `message`,`date_limite`,`etapes`, `type`,`id_utilisateur`) VALUES(:sujet, :message, :date_limite, :etapes, 'complexe',:id_utilisateur) ");
             $sql->execute([
@@ -26,7 +28,7 @@ if (isset($_SESSION['users']['id'])) {
                 "message" => $message,
                 "date_limite" => $date_limite,
                 "etapes" => $etapes,
-                'id_utilisateur'=>$id
+                'id_utilisateur' => $id
             ]);
         }
     }
@@ -45,12 +47,21 @@ $title = "tache complexe";
 require_once 'includes/header.php'
 ?>
 <section>
-   
+
 
     <div class="min-h-screen bg-[#B4CA65] flex items-center justify-center p-4">
         <form method="POST" class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-xl space-y-6">
             <h2 class="text-2xl font-bold text-[#ff6c6c] text-center underline">Ajouter une tâche complexe</h2>
-          
+            <?php
+            if (!empty($errors)) {
+                foreach ($errors as $error):
+                    echo "<div style='color:white; text-align: center; background-color:#ff6c6c;padding:2px 7px; margin-bottom:10px; font-size:16px;'>
+        $error
+        </div>";
+                endforeach;
+            }
+            ?>
+
             <!-- Nom de la tâche -->
             <div>
                 <label class="block text-[#333] mb-1 font-semibold">sujet de la tâche</label>
