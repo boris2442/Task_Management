@@ -2,6 +2,17 @@
 session_start();
 require_once 'includes/database/database.php';
 require_once 'includes/functions/clean_input.php';
+
+
+
+
+
+
+
+
+
+
+
 // if (isset($_SESSION['users']['id'])) {
 
 //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -86,7 +97,7 @@ require_once 'includes/header.php';
 <section>
     <div class="min-h-screen bg-[#B4CA65] flex items-center justify-center p-6">
         <form method="POST" class="w-full max-w-xl bg-white p-8 rounded-2xl shadow-lg space-y-6">
-            
+
             <h2 class="text-2xl font-bold text-red-400">Editer une tache</h2>
 
             <!-- Titre -->
@@ -140,7 +151,7 @@ require_once 'includes/header.php';
             </div>
             <!-- Bouton -->
             <div class="text-right">
-                <button type="submit" class="w-full bg-[#ff6c6c] hover:bg-red-400 text-white font-bold py-2 px-4 rounded-md transition duration-300">Ajouter la tâche</button>
+                <button type="submit" name="update" class="w-full bg-[#ff6c6c] hover:bg-red-400 text-white font-bold py-2 px-4 rounded-md transition duration-300">Ajouter la tâche</button>
             </div>
         </form>
     </div>
