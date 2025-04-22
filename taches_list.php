@@ -92,11 +92,11 @@ require_once 'includes/navbar.php';
                     <h2 class="text-xl font-semibold text-[#333]">Tâche #<?= $tache['id_tache'] ?></h2>
                     <a href="taches_edit.php?id=<?= $tache['id_tache'] ?>"
                         class="bg-red-400 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-200 shadow">Modifier</a>
-                        <a href="taches_delete.php?id=<?= $tache['id_tache'] ?>"
-   class="bg-red-400 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-200 shadow"
-   onclick="return confirm('Es-tu sûr de vouloir supprimer cette tâche ? Cette action est irréversible.');">
-   Supprimer
-</a>
+                    <a href="taches_delete.php?id=<?= $tache['id_tache'] ?>"
+                        class="bg-red-400 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-200 shadow"
+                        onclick="return confirm('Es-tu sûr de vouloir supprimer cette tâche ? Cette action est irréversible.');">
+                        Supprimer
+                    </a>
 
                 </div>
 
